@@ -5,8 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SASS Example</title>
     <link rel="stylesheet" href="/public/css/main.css">
-</head>
-<body>
-    <h1>SASS GOAT</h1>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Page</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f9;
+            }
+            .login-container {
+                width: 300px;
+                padding: 20px;
+                background-color: #ffffff;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                border-radius: 5px;
+                text-align: center;
+            }
+            h1 {
+                margin-bottom: 20px;
+            }
+            input[type="text"], input[type="password"] {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+            button {
+                width: 100%;
+                padding: 10px;
+                background-color: #5cb85c;
+                border: none;
+                color: white;
+                font-size: 16px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: #4cae4c;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="login-container">
+            <h1>Login</h1>
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button onclick="login()">Login</button>
+            <p id="message" style="color: red; margin-top: 10px;"></p>
+        </div>
+    
+        <script>
+            function login() {
+                const username = document.getElementById("username").value;
+                const password = document.getElementById("password").value;
+                const message = document.getElementById("message");
+    
+                // Simple hardcoded login validation
+                if (username === "admin" && password === "password") {
+                    message.style.color = "green";
+                    message.innerText = "Login successful!";
+                    // Redirect to another page, or perform some other action
+                    setTimeout(() => {
+                        window.location.href = "welcome.html";
+                    }, 1000);
+                } else {
+                    message.style.color = "red";
+                    message.innerText = "Invalid username or password.";
+                }
+            }
+        </script>
+    </body>
 </html>
