@@ -1,5 +1,129 @@
-$darkred: rgb(139, 35, 35);
+// Variables
+$font-stack: Arial, sans-serif;
+$primary-color: #3498db;
+$secondary-color: #2c3e50;
+$hover-color: darken($primary-color, 10%);
+
+// Base Styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-stack;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: $secondary-color;
+    color: #ecf0f1;
+}
+
+header {
+    text-align: center;
+}
 
 h1 {
-    color: $darkred;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: $primary-color;
+}
+
+// Menu Styles
+.menu {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.menu__item {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #ecf0f1;
+    background-color: $primary-color;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: $hover-color;
+    }
+}
+
+// Variables
+$font-stack: Arial, sans-serif;
+$background-color: #2c3e50;
+$option1-color: #e74c3c; // Red
+$option2-color: #3498db; // Blue
+$option3-color: #2ecc71; // Green
+$option4-color: #f1c40f; // Yellow
+$hover-opacity: 0.85;
+
+// Base Styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-stack;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: $background-color;
+    color: #ecf0f1;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #ecf0f1;
+}
+
+// Quiz Options Grid
+.quiz-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    width: 100%;
+    max-width: 500px;
+}
+
+// Button Styles for Each Option
+.quiz-options__button {
+    padding: 2rem;
+    font-size: 1.5rem;
+    color: #ecf0f1;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+        opacity: $hover-opacity;
+    }
+
+    &#option1 {
+        background-color: $option1-color;
+    }
+
+    &#option2 {
+        background-color: $option2-color;
+    }
+
+    &#option3 {
+        background-color: $option3-color;
+    }
+
+    &#option4 {
+        background-color: $option4-color;
+    }
 }
