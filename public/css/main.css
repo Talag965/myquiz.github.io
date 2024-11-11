@@ -19,6 +19,7 @@ header {
 }
 
 h1 {
+  color: rgb(139, 35, 35);
   font-size: 2rem;
   margin-bottom: 2rem;
   color: #3498db;

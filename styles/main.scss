@@ -1,3 +1,5 @@
+
+$darkred: rgb(139, 35, 35);
 // Variables
 $font-stack: Arial, sans-serif;
 $primary-color: #3498db;
@@ -26,10 +28,13 @@ header {
 }
 
 h1 {
+    color: $darkred;
     font-size: 2rem;
     margin-bottom: 2rem;
     color: $primary-color;
 }
+    
+
 
 // Menu Styles
 .menu {
