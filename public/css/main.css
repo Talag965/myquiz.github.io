@@ -102,3 +102,25 @@ h1 {
 .quiz-options__button#option4 {
   background-color: #f1c40f;
 }
+
+#restart-btn {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background-color: #8e44ad; 
+  color: #ecf0f1;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#restart-btn:hover {
+  background-color: #9b59b6; 
+  transform: scale(1.05); 
+}
+
+#restart-btn:active {
+  transform: scale(0.95); 
+  background-color: #7d3c98; 
+}
+
