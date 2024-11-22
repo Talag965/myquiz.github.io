@@ -1,11 +1,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SASS Example</title>
     <title>Quiz</title>
     <link rel="stylesheet" href="/public/css/main.css">
     <script>
-        
         const questions = [
             {
                 question: "Hur många timmar finns det på en dag?",
@@ -27,35 +25,29 @@
         let currentQuestionIndex = 0;
         let score = 0;
 
-        // Function to load the current question
         function loadQuestion() {
             const currentQuestion = questions[currentQuestionIndex];
             document.getElementById('question').textContent = currentQuestion.question;
 
-            // Display options
             currentQuestion.options.forEach((option, index) => {
                 const optionButton = document.getElementById('option' + (index + 1));
                 optionButton.textContent = option;
-                optionButton.style.display = "inline-block"; // Ensure buttons are visible
+                optionButton.style.display = "inline-block";
                 optionButton.onclick = function() {
                     checkAnswer(index);
                 };
             });
 
-            // Hide the restart button while questions are being answered
             document.getElementById('restart-btn').style.display = "none";
         }
 
-        // Function to check the answer and move to the next question
         function checkAnswer(selectedOptionIndex) {
             const currentQuestion = questions[currentQuestionIndex];
 
-            // Check if the answer is correct
             if (selectedOptionIndex === currentQuestion.correctAnswer) {
                 score++;
             }
 
-            // Move to the next question or end the quiz
             currentQuestionIndex++;
             if (currentQuestionIndex < questions.length) {
                 loadQuestion();
@@ -64,36 +56,39 @@
             }
         }
 
-        // Function to end the quiz
         function endQuiz() {
             document.getElementById('question').textContent = 
                 "Quiz finished! Your score is " + score + "/" + questions.length;
 
-            // Hide the answer buttons
             for (let i = 1; i <= 4; i++) {
                 document.getElementById('option' + i).style.display = "none";
             }
 
-            // Show the restart button
             const restartBtn = document.getElementById('restart-btn');
             restartBtn.style.display = "inline-block";
             restartBtn.onclick = restartQuiz;
         }
 
-        // Function to restart the quiz
         function restartQuiz() {
             currentQuestionIndex = 0;
             score = 0;
             loadQuestion();
         }
 
-        // Initialize the quiz
         window.onload = loadQuestion;
+
+        
+        function goToMainMenu() {
+            window.location.href = "quiz1.html"; 
+        }
     </script>
 </head>
 <body>
     <header>
         <h1>Quiz</h1>
+        
+        <button class="main-menu-btn" onclick="goToMainMenu()">Till Menyn</button>
+
         <p id="question" style="font-size: 1.6em; padding: 1.6em;"></p>
         <nav class="quiz-options">
             <button class="quiz-options__button" id="option1"></button>
@@ -101,8 +96,6 @@
             <button class="quiz-options__button" id="option3"></button>
             <button class="quiz-options__button" id="option4"></button>
         </nav>
-        <!-- Restart button -->
         <button id="restart-btn" style="display: none;">Starta om quizen</button>
     </header>
 </body>
-

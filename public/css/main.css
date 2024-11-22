@@ -135,6 +135,34 @@ footer a:hover {
   background-color: #7d3c98; 
 }
 
+
+.main-menu-btn { 
+  position: fixed; 
+  bottom: 100px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  padding: 25px 50px; 
+  font-size: 1.65em; 
+  font-family: "Roboto", sans-serif;
+  background-color: #007BFF;
+  color: #FDFFFC;
+  border: none;
+  border-radius: 11px; 
+  cursor: pointer;
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.3); 
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.main-menu-btn:hover {
+  background-color: #0056b3;
+}
+
+.main-menu-btn:active {
+  transform: scale(0.95);
+  background-color: #003f7f;
+}
+
 ul {
   list-style: none;
 }
+
