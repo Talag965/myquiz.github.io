@@ -22,10 +22,15 @@ header {
 }
 header h1 {
   font-family: "Roboto", sans-serif;
-  font-size: 3rem;
+  font-size: 5rem;
   color: #552583;
   margin-bottom: 0.5rem;
 }
+
+header h1 .quiz_menu{
+  margin-bottom: 0em;
+}
+
 header p {
   font-size: 1.2rem;
   color: #d6dbdc;
@@ -33,12 +38,12 @@ header p {
 
 .menu {
   display: flex;
-  gap: 1.5rem;
-  margin-top: 3rem;
+  margin-top: 1rem;
+  justify-content: center;
 }
 .menu .menu__item {
-  padding: 0.8rem 2rem;
-  font-size: 1.2rem;
+  padding: 2rem 4.5rem;
+  font-size: 3rem;
   text-decoration: none;
   font-family: "Roboto", sans-serif;
   color: #FDFFFC;
@@ -51,6 +56,12 @@ header p {
   background-color: #4d2176;
   transform: translateY(-3px);
 }
+
+li{
+  margin-top: 6em;
+}
+
+
 
 .quiz-options {
   display: grid;
