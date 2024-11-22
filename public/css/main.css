@@ -34,7 +34,7 @@ header p {
 .menu {
   display: flex;
   gap: 1.5rem;
-  margin-bottom: 3rem;
+  margin-top: 3rem;
 }
 .menu .menu__item {
   padding: 0.8rem 2rem;
@@ -42,7 +42,7 @@ header p {
   text-decoration: none;
   font-family: "Roboto", sans-serif;
   color: #FDFFFC;
-  background-color: #552583;
+  background-color: color;
   border-radius: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -124,6 +124,7 @@ footer a:hover {
   background-color: #7d3c98; 
 }
 
+
 .main-menu-btn { 
   position: fixed; 
   bottom: 100px; 
@@ -149,3 +150,8 @@ footer a:hover {
   transform: scale(0.95);
   background-color: #003f7f;
 }
+
+ul {
+  list-style: none;
+}
+
