@@ -141,7 +141,7 @@ footer a:hover {
   bottom: 100px; 
   left: 50%; 
   transform: translateX(-50%); 
-  padding: 25px 50px; 
+  padding: 24px 50px; 
   font-size: 1.65em; 
   font-family: "Roboto", sans-serif;
   background-color: #007BFF;
@@ -165,4 +165,5 @@ footer a:hover {
 ul {
   list-style: none;
 }
+
 
