@@ -19,7 +19,11 @@
                 question: "Vilken färg är himlen en vanlig dag?",
                 options: ["Grön", "Blå", "Röd", "Svart"],
                 correctAnswer: 1
+                
             }
+
+            
+            
         ];
 
         let currentQuestionIndex = 0;
@@ -67,12 +71,20 @@
             const restartBtn = document.getElementById('restart-btn');
             restartBtn.style.display = "inline-block";
             restartBtn.onclick = restartQuiz;
+
+            const hemBtn = document.getElementById('hem-btn');
+            restartBtn.style.display = "inline-block";
+            restartBtn.onclick = restartQuiz;
+
+            document.getElementById('main-menu-btn').style.display = "inline-block";
         }
 
         function restartQuiz() {
             currentQuestionIndex = 0;
             score = 0;
             loadQuestion();
+
+            document.getElementById('main-menu-btn').style.display = "none";
         }
 
         window.onload = loadQuestion;
@@ -87,12 +99,14 @@
     <header>
         <h1>Quiz</h1>
         
-        <button class="main-menu-btn" onclick="goToMainMenu()">Till Menyn</button>
+        <button class="main-menu-btn" id="main-menu-btn" style="display: none;" onclick="goToMainMenu()">Till Menyn</button>
+
+
 
         <p id="question" style="font-size: 1.6em; padding: 1.6em;"></p>
         <nav class="quiz-options">
             <button class="quiz-options__button" id="option1"></button>
-            <button class="quiz-options__button" id="option2"></button>
+            <button class="quiz-options__button" id="option2"></button> 
             <button class="quiz-options__button" id="option3"></button>
             <button class="quiz-options__button" id="option4"></button>
         </nav>
