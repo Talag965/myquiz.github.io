@@ -1,47 +1,118 @@
-<script>
-    const questions = [
-        {
-            question: "Vilken är bästa handen i poker?",
-            options: ["AA", "KK", "AKs", "72o"],
-            correctAnswer: 4,
-            image: "images/dice.png" // Ensure this image exists
-        },
-        {
-            question: "Hur många cigg för att dö?",
-            options: ["100", "10", "20", "40"],
-            correctAnswer: 1,
-            image: "images/cigai.jpg"
-        },
-        {
-            question: "Vilken Anime e bäst?",
-            options: ["One Piece", "JJK", "Naruto", "AOT"],
-            correctAnswer: 3,
-            image: "images/animeai.jpg"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="/public/css/main.css">
+    <script>
+        const questions = [
+            {
+                question: "Vilken är bästa handen i poker?",
+                options: ["AA", "KK", "AKs", "72o"],
+                correctAnswer: 4,
+                image: "dice.png" 
+            },
+            {
+                question: "Hur många cigg för att dö?",
+                options: ["100", "10", "20", "40"],
+                correctAnswer: 1,
+                image: "images/cigai.jpg" 
+            },
+            {
+                question: "Vilken Anime e bäst?",
+                options: ["One Piece", "JJK", "Naruto", "AOT"],
+                correctAnswer: 3,
+                image: "images/animeai.jpg"
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            const currentQuestion = questions[currentQuestionIndex];
+
+            document.getElementById('question').textContent = currentQuestion.question;
+
+            currentQuestion.options.forEach((option, index) => {
+                const optionButton = document.getElementById('option' + (index + 1));
+                optionButton.textContent = option;
+                optionButton.style.display = "inline-block";
+                optionButton.onclick = function () {
+                    checkAnswer(index);
+                };
+            });
+
+            const quizImage = document.getElementById('quiz-image');
+            quizImage.src = currentQuestion.image;
+            quizImage.alt = "Image for question " + (currentQuestionIndex + 1);
+
+            document.getElementById('restart-btn').style.display = "none";
         }
-    ];
 
-    function loadQuestion() {
-        const currentQuestion = questions[currentQuestionIndex];
+        function checkAnswer(selectedOptionIndex) {
+            const currentQuestion = questions[currentQuestionIndex];
 
-        // Set the question text
-        document.getElementById('question').textContent = currentQuestion.question;
+            if (selectedOptionIndex === currentQuestion.correctAnswer) {
+                score++;
+            }
 
-        // Set the image
-        const quizImage = document.getElementById('quiz-image');
-        quizImage.src = currentQuestion.image;
-        quizImage.alt = "Image for question " + (currentQuestionIndex + 1);
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                loadQuestion();
+            } else {
+                endQuiz();
+            }
+        }
 
-        // Debug: Log the image path
-        console.log("Loading image:", quizImage.src);
+        function endQuiz() {
+            document.getElementById('question').textContent =
+                "Bra jobbat! Du mogga " + score + "/" + questions.length;
 
-        // Set the options
-        currentQuestion.options.forEach((option, index) => {
-            const optionButton = document.getElementById('option' + (index + 1));
-            optionButton.textContent = option;
-            optionButton.style.display = "inline-block";
-            optionButton.onclick = function () {
-                checkAnswer(index);
-            };
-        });
-    }
-</script>
+            for (let i = 1; i <= 4; i++) {
+                document.getElementById('option' + i).style.display = "none";
+            }
+
+            const restartBtn = document.getElementById('restart-btn');
+            restartBtn.style.display = "inline-block";
+            restartBtn.onclick = restartQuiz;
+
+            document.getElementById('main-menu-btn').style.display = "inline-block";
+        }
+
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            loadQuestion();
+
+            
+
+            document.getElementById('main-menu-btn').style.display = "none";
+        }
+
+        window.onload = loadQuestion;
+
+        function goToMainMenu() {
+            window.location.href = "quiz_menu.html";
+        }
+    </script>
+<body>
+    <header>
+        <h1>Quiz</h1>
+        
+        <button class="main-menu-btn" id="main-menu-btn" style="display: none;" onclick="goToMainMenu()">Till Menyn</button>
+
+        <img id="quiz-image" src="" alt="Question Image" style="width: 100%; max-width: 500px; margin-bottom: 1em;">
+
+        <p id="question" style="font-size: 1.6em; padding: 1.6em;"></p>
+        <nav class="quiz-options">
+            <button class="quiz-options__button" id="option1"></button>
+            <button class="quiz-options__button" id="option2"></button> 
+            <button class="quiz-options__button" id="option3"></button>
+            <button class="quiz-options__button" id="option4"></button>
+        </nav>
+        <button id="restart-btn" style="display: none;">Starta om quizen</button>
+    </header>
+</body>
+</html>
