@@ -10,19 +10,19 @@
             {
                 question: "Vilken är bästa handen i poker?",
                 options: ["AA", "KK", "AKs", "72o"],
-                correctAnswer: 4,
-                image: "dice.png" 
+                correctAnswer: 3,
+                image: "images/pokerai.jpg" 
             },
             {
                 question: "Hur många cigg för att dö?",
                 options: ["100", "10", "20", "40"],
-                correctAnswer: 1,
+                correctAnswer: 0,
                 image: "images/cigai.jpg" 
             },
             {
                 question: "Vilken Anime e bäst?",
                 options: ["One Piece", "JJK", "Naruto", "AOT"],
-                correctAnswer: 3,
+                correctAnswer: 2,
                 image: "images/animeai.jpg"
             }
         ];
@@ -103,7 +103,7 @@
         
         <button class="main-menu-btn" id="main-menu-btn" style="display: none;" onclick="goToMainMenu()">Till Menyn</button>
 
-        <img id="quiz-image" src="" alt="Question Image" style="width: 100%; max-width: 500px; margin-bottom: 1em;">
+        <img id="quiz-image" src="" alt="Question Image" style="width: 70%; height: 40%; max-width: 500px; margin-bottom: 1em;">
 
         <p id="question" style="font-size: 1.6em; padding: 1.6em;"></p>
         <nav class="quiz-options">
