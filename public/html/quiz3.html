@@ -1,19 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
     <link rel="stylesheet" href="/public/css/main.css">
+    <script>
+        const questions = [
+            {
+                question: "Vilken är bästa handen i poker?",
+                correctAnswer: "72o",
+            },
+            {
+                question: "Hur många cigg för att dö?",
+                correctAnswer: "100",
+            },
+            {
+                question: "Vilken Anime e bäst?",
+                correctAnswer: "Naruto",
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            const currentQuestion = questions[currentQuestionIndex];
+            document.getElementById('question').textContent = currentQuestion.question;
+            document.getElementById('answer-input').value = "";
+            document.getElementById('feedback').textContent = "";
+        }
+
+        function goToMainMenu() {
+            window.location.href = "quiz_menu.html";
+        }
+
+        function checkAnswer() {
+            const userAnswer = document.getElementById('answer-input').value.trim();
+            const currentQuestion = questions[currentQuestionIndex];
+
+            if (userAnswer.toLowerCase() === currentQuestion.correctAnswer.toLowerCase()) {
+                score++;
+                document.getElementById('feedback').textContent = "Rätt svar!";
+            } else {
+                document.getElementById('feedback').textContent = `Fel! Rätt svar var "${currentQuestion.correctAnswer}".`;
+            }
+
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                setTimeout(loadQuestion, 1500);
+            } else {
+                endQuiz();
+            }
+        }
+
+        function endQuiz() {
+            document.getElementById('question').textContent =
+                `Bra jobbat! Du fick ${score}/${questions.length} rätt.`;
+            document.getElementById('answer-container').style.display = "none";
+            document.getElementById('restart-btn').style.display = "block";
+        }
+
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            document.getElementById('answer-container').style.display = "block";
+            document.getElementById('restart-btn').style.display = "none";
+            loadQuestion();
+        }
+
+        window.onload = loadQuestion;
+    </script>
 </head>
 <body>
     <header>
-        <h1>Quiz Input</h1>
-        
-        <button class="main-menu-btn" id="main-menu-btn" style="display: none;" onclick="goToMainMenu()">Till Menyn</button>
-
-
-
-        <p id="question" style="font-size: 1.6em; padding: 1.6em;"></p>
-        <input type="text" id="answer" name="answer">
-        <button id="restart-btn" style="display: none;">Starta om quizen</button>
+        <h1>Quiz</h1>
+        <p id="question" class="quiz-question"></p>
+        <div id="answer-container" class="answer-container">
+            <input type="text" id="answer-input" placeholder="Skriv ditt svar här" />
+            <button onclick="checkAnswer()">Skicka svar</button>
+        </div>
+        <p id="feedback" class="feedback"></p>
+        <button id="restart-btn" style="display: none;" onclick="restartQuiz()">Starta om quizen</button>
+        <button class="main-menu-btn" id="main-menu-btn" onclick="goToMainMenu()">Till Menyn</button>
     </header>
 </body>
+</html>

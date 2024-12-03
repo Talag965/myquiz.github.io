@@ -85,10 +85,6 @@
             currentQuestionIndex = 0;
             score = 0;
             loadQuestion();
-
-            
-
-            document.getElementById('main-menu-btn').style.display = "none";
         }
 
         window.onload = loadQuestion;
@@ -101,9 +97,9 @@
     <header>
         <h1>Quiz</h1>
         
-        <button class="main-menu-btn" id="main-menu-btn" style="display: none;" onclick="goToMainMenu()">Till Menyn</button>
+         <button class="main-menu-btn" id="main-menu-btn" onclick="goToMainMenu()">Till Menyn</button>
 
-        <img id="quiz-image" src="" alt="Question Image" style="width: 70%; height: 40%; max-width: 500px; margin-bottom: 1em;">
+        <img id="quiz-image" src="" alt="Question Image" style="width: 80%; height: 32%; max-width: 500px; margin-bottom: 1em;">
 
         <p id="question" style="font-size: 1.6em; padding: 1.6em;"></p>
         <nav class="quiz-options">
