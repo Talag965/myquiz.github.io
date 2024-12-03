@@ -22,15 +22,10 @@ header {
 }
 header h1 {
   font-family: "Roboto", sans-serif;
-  font-size: 5rem;
+  font-size: 3rem;
   color: #552583;
   margin-bottom: 0.5rem;
 }
-
-header h1 .quiz_menu{
-  margin-bottom: 0em;
-}
-
 header p {
   font-size: 1.2rem;
   color: #d6dbdc;
@@ -38,16 +33,16 @@ header p {
 
 .menu {
   display: flex;
-  margin-top: 1rem;
-  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
 }
 .menu .menu__item {
-  padding: 2rem 4.5rem;
-  font-size: 3rem;
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
   text-decoration: none;
   font-family: "Roboto", sans-serif;
   color: #FDFFFC;
-  background-color: color;
+  background-color: #552583;
   border-radius: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -56,12 +51,6 @@ header p {
   background-color: #4d2176;
   transform: translateY(-3px);
 }
-
-li{
-  margin-top: 6em;
-}
-
-
 
 .quiz-options {
   display: grid;
@@ -113,79 +102,3 @@ footer a {
 footer a:hover {
   color: #4d2176;
 }
-
-#restart-btn {
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  background-color: #8e44ad; 
-  color: #ecf0f1;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-#restart-btn:hover {
-  background-color: #9b59b6; 
-  transform: scale(1.05); 
-}
-
-#restart-btn:active {
-  transform: scale(0.95); 
-  background-color: #7d3c98; 
-}
-
-
-.main-menu-btn { 
-  display: block; /* Gör hela knappen klickbar, inte bara texten */
-    width: fit-content; 
-    padding: 0.8em 2.6em; 
-    margin: 1.6em auto; 
-    font-size: 2em;
-    font-family: 'Roboto', sans-serif; 
-    color: #FDFFFC; 
-    background-color: #552583; 
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.main-menu-btn:hover {
-  background-color: #4d2176; 
-    transform: translateY(-2px);
-}
-
-.main-menu-btn:active {
-  transform: scale(0.95);
-  background-color: #003f7f;
-}
-
-ul {
-  list-style: none;
-}
-
-#answer-input {
-  width: 100%;
-  max-width: 400px;
-  padding: 10px 15px;
-  font-size: 16px;
-  color: #333;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  outline: none;
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-#answer-input:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-#answer-input::placeholder {
-  color: #aaa;
-  font-style: italic;
-}
-
