@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
-    <link rel="stylesheet" href="/public/css/main.css">
+    <link rel="stylesheet" href="main.css">
     <script>
         const questions = [
             {
                 question: "Vilken är bästa handen i poker?",
                 options: ["AA", "KK", "AKs", "72o"],
                 correctAnswer: 3,
-                image: "images/pokerai.jpg" 
+                image: "pokerai.jpg" 
             },
             {
                 question: "Hur många cigg för att dö?",
                 options: ["100", "10", "20", "40"],
                 correctAnswer: 0,
-                image: "images/cigai.jpg" 
+                image: "cigai.jpg" 
             },
             {
                 question: "Vilken Anime e bäst?",
                 options: ["One Piece", "JJK", "Naruto", "AOT"],
                 correctAnswer: 2,
-                image: "images/animeai.jpg"
+                image: "animeai.jpg"
             }
         ];
 
@@ -90,7 +90,7 @@
         window.onload = loadQuestion;
 
         function goToMainMenu() {
-            window.location.href = "quiz_menu.html";
+            window.location.href = "index.html";
         }
     </script>
 <body>
