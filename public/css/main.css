@@ -137,24 +137,25 @@ footer a:hover {
 
 
 .main-menu-btn { 
-  position: fixed; 
-  bottom: 100px; 
-  left: 50%; 
-  transform: translateX(-50%); 
-  padding: 24px 50px; 
-  font-size: 1.65em; 
-  font-family: "Roboto", sans-serif;
-  background-color: #007BFF;
-  color: #FDFFFC;
-  border: none;
-  border-radius: 11px; 
-  cursor: pointer;
-  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.3); 
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: block; /* Gör hela knappen klickbar, inte bara texten */
+    width: fit-content; 
+    padding: 0.8em 1.5em; 
+    margin: 1em auto; 
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif; 
+    color: #FDFFFC; 
+    background-color: #552583; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .main-menu-btn:hover {
-  background-color: #0056b3;
+  background-color: #4d2176; 
+    transform: translateY(-2px);
 }
 
 .main-menu-btn:active {
@@ -166,4 +167,25 @@ ul {
   list-style: none;
 }
 
+#answer-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #333;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#answer-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+#answer-input::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
 
