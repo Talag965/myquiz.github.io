@@ -213,3 +213,34 @@ ul {
 #prev-btn {
   display: none;
 }
+
+.navigation button {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  background-color: purple;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.navigation button:hover {
+  background-color: #4d2176;
+}
+
+#answer-container button{
+  padding: 10px 20px;
+  font-size: 1.2em;
+  background-color: gray;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#answer-container button:hover{
+  background-color: purple;
+}
+

@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #42474E;
+  color: #FDFFFC;
+  padding: 2rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+header h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 3rem;
+  color: #552583;
+  margin-bottom: 0.5rem;
+}
+header p {
+  font-size: 1.2rem;
+  color: #d6dbdc;
+}
+
+.menu {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+.menu .menu__item {
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  color: #FDFFFC;
+  background-color: #552583;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.menu .menu__item:hover {
+  background-color: #4d2176;
+  transform: translateY(-3px);
+}
+
+.quiz-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+}
+.quiz-options .quiz-options__button {
+  padding: 2rem;
+  font-size: 1.5rem;
+  color: #FDFFFC;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+.quiz-options .quiz-options__button:hover {
+  opacity: 0.85;
+  transform: translateY(-5px);
+}
+.quiz-options .quiz-options__button#option1 {
+  background-color: #552583;
+}
+.quiz-options .quiz-options__button#option2 {
+  background-color: #FDB927;
+}
+.quiz-options .quiz-options__button#option3 {
+  background-color: #FDB927;
+}
+.quiz-options .quiz-options__button#option4 {
+  background-color: #552583;
+}
+
+footer {
+  margin-top: 3rem;
+  font-size: 1rem;
+  color: #d6dbdc;
+}
+footer a {
+  text-decoration: none;
+  color: #552583;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+footer a:hover {
+  color: #4d2176;
+}

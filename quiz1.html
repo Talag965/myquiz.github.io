@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,11 +21,7 @@
                 question: "Vilken färg är himlen en vanlig dag?",
                 options: ["Grön", "Blå", "Röd", "Svart"],
                 correctAnswer: 1
-                
             }
-
-            
-            
         ];
 
         let currentQuestionIndex = 0;
@@ -43,6 +41,11 @@
             });
 
             document.getElementById('restart-btn').style.display = "none";
+
+            // Uppdatera fram- och tillbaka-knapparnas synlighet
+            document.getElementById('prev-btn').style.display = currentQuestionIndex > 0 ? 'inline-block' : 'none';
+            document.getElementById('next-btn').style.display =
+                currentQuestionIndex < questions.length - 1 ? 'inline-block' : 'none';
         }
 
         function checkAnswer(selectedOptionIndex) {
@@ -52,30 +55,36 @@
                 score++;
             }
 
-            currentQuestionIndex++;
-            if (currentQuestionIndex < questions.length) {
+            nextQuestion();
+        }
+
+        function nextQuestion() {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
                 loadQuestion();
             } else {
                 endQuiz();
             }
         }
 
+        function previousQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                loadQuestion();
+            }
+        }
+
         function endQuiz() {
-            document.getElementById('question').textContent = 
-                "Bra jobbat! Du mogga " + score + "/" + questions.length;
+            document.getElementById('question').textContent =
+                "Bra jobbat! Du fick " + score + "/" + questions.length;
 
             for (let i = 1; i <= 4; i++) {
                 document.getElementById('option' + i).style.display = "none";
             }
 
-            const restartBtn = document.getElementById('restart-btn');
-            restartBtn.style.display = "inline-block";
-            restartBtn.onclick = restartQuiz;
-
-            const hemBtn = document.getElementById('hem-btn');
-            restartBtn.style.display = "inline-block";
-            restartBtn.onclick = restartQuiz;
-
+            document.getElementById('restart-btn').style.display = "inline-block";
+            document.getElementById('prev-btn').style.display = "none";
+            document.getElementById('next-btn').style.display = "none";
             document.getElementById('main-menu-btn').style.display = "inline-block";
         }
 
@@ -83,14 +92,13 @@
             currentQuestionIndex = 0;
             score = 0;
             loadQuestion();
-
         }
 
-        window.onload = loadQuestion;
-        
         function goToMainMenu() {
             window.location.href = "index.html"; 
         }
+
+        window.onload = loadQuestion;
     </script>
 </head>
 <body>
@@ -99,8 +107,6 @@
         
         <button class="main-menu-btn" id="main-menu-btn" onclick="goToMainMenu()">Till Menyn</button>
 
-
-
         <p id="question" style="font-size: 1.6em; padding: 1.6em;"></p>
         <nav class="quiz-options">
             <button class="quiz-options__button" id="option1"></button>
@@ -108,6 +114,15 @@
             <button class="quiz-options__button" id="option3"></button>
             <button class="quiz-options__button" id="option4"></button>
         </nav>
-        <button id="restart-btn" style="display: none;">Starta om quizen</button>
+
+        
+        <div class="navigation">
+            <button id="prev-btn" style="display: none;" onclick="previousQuestion()">◀ Föregående</button>
+            <button id="next-btn" style="display: none;" onclick="nextQuestion()">Nästa ▶</button>
+        </div>
+
+        <button id="restart-btn" style="display: none;" onclick="restartQuiz()">Starta om quizen</button>
+
     </header>
 </body>
+</html>
