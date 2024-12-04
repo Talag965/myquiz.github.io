@@ -139,9 +139,9 @@ footer a:hover {
 .main-menu-btn { 
   display: block; /* Gör hela knappen klickbar, inte bara texten */
     width: fit-content; 
-    padding: 0.8em 2.6em; 
-    margin: 1.6em auto; 
-    font-size: 2em;
+    padding: 0.8em 1.5em; 
+    margin: 1em auto; 
+    font-size: 1.2em;
     font-family: 'Roboto', sans-serif; 
     color: #FDFFFC; 
     background-color: #552583; 
@@ -149,7 +149,7 @@ footer a:hover {
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
