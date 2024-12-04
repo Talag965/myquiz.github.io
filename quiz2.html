@@ -110,27 +110,21 @@
 </head>
 <body>
     <header>
-        <h1>Quiz</h1>
-        
-        <button class="main-menu-btn" id="main-menu-btn" onclick="goToMainMenu()">Till Menyn</button>
+        <h1>Quiz</h1>        
 
         <img id="quiz-image" src="" alt="Question Image" style="width: 80%; height: 32%; max-width: 500px; margin-bottom: 1em;">
 
         <p id="question" style="font-size: 1.6em; padding: 1.6em;"></p>
         <nav class="quiz-options">
             <button class="quiz-options__button" id="option1"></button>
-            <button class="quiz-options__button" id="option2"></button> 
+            <button class="quiz-options__button" id="option2"></button>
             <button class="quiz-options__button" id="option3"></button>
             <button class="quiz-options__button" id="option4"></button>
         </nav>
-
-        <!-- Navigeringsknappar (fram och tillbaka) -->
-        <div class="navigation">
-            <button id="prev-btn" style="display: none;" onclick="previousQuestion()">◀ Föregående</button>
-            <button id="next-btn" style="display: none;" onclick="nextQuestion()">Nästa ▶</button>
-        </div>
-
-        <button id="restart-btn" style="display: none;" onclick="restartQuiz()">Starta om quizen</button>
+        <div style="margin-top: 6rem; text-align: center;">
+            <button class="main-menu-btn" id="main-menu-btn" onclick="goToMainMenu()">Till Menyn</button>
+        </div>        
+        <button id="restart-btn" style="display: none;">Starta om quizen</button>
     </header>
 </body>
 </html>
