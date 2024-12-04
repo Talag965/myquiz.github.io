@@ -48,6 +48,10 @@
             quizImage.src = currentQuestion.image;
             quizImage.alt = "Image for question " + (currentQuestionIndex + 1);
 
+            // Navigationsknappar
+            document.getElementById('prev-btn').style.display = currentQuestionIndex > 0 ? 'inline-block' : 'none';
+            document.getElementById('next-btn').style.display = currentQuestionIndex < questions.length - 1 ? 'inline-block' : 'none';
+
             document.getElementById('restart-btn').style.display = "none";
         }
 
@@ -58,26 +62,36 @@
                 score++;
             }
 
-            currentQuestionIndex++;
-            if (currentQuestionIndex < questions.length) {
+            nextQuestion();
+        }
+
+        function nextQuestion() {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
                 loadQuestion();
             } else {
                 endQuiz();
             }
         }
 
+        function previousQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                loadQuestion();
+            }
+        }
+
         function endQuiz() {
             document.getElementById('question').textContent =
-                "Bra jobbat! Du mogga " + score + "/" + questions.length;
+                "Bra jobbat! Du fick " + score + "/" + questions.length;
 
             for (let i = 1; i <= 4; i++) {
                 document.getElementById('option' + i).style.display = "none";
             }
 
-            const restartBtn = document.getElementById('restart-btn');
-            restartBtn.style.display = "inline-block";
-            restartBtn.onclick = restartQuiz;
-
+            document.getElementById('restart-btn').style.display = "inline-block";
+            document.getElementById('prev-btn').style.display = "none";
+            document.getElementById('next-btn').style.display = "none";
             document.getElementById('main-menu-btn').style.display = "inline-block";
         }
 
@@ -93,11 +107,12 @@
             window.location.href = "index.html";
         }
     </script>
+</head>
 <body>
     <header>
         <h1>Quiz</h1>
         
-         <button class="main-menu-btn" id="main-menu-btn" onclick="goToMainMenu()">Till Menyn</button>
+        <button class="main-menu-btn" id="main-menu-btn" onclick="goToMainMenu()">Till Menyn</button>
 
         <img id="quiz-image" src="" alt="Question Image" style="width: 80%; height: 32%; max-width: 500px; margin-bottom: 1em;">
 
@@ -108,7 +123,14 @@
             <button class="quiz-options__button" id="option3"></button>
             <button class="quiz-options__button" id="option4"></button>
         </nav>
-        <button id="restart-btn" style="display: none;">Starta om quizen</button>
+
+        <!-- Navigeringsknappar (fram och tillbaka) -->
+        <div class="navigation">
+            <button id="prev-btn" style="display: none;" onclick="previousQuestion()">◀ Föregående</button>
+            <button id="next-btn" style="display: none;" onclick="nextQuestion()">Nästa ▶</button>
+        </div>
+
+        <button id="restart-btn" style="display: none;" onclick="restartQuiz()">Starta om quizen</button>
     </header>
 </body>
 </html>
