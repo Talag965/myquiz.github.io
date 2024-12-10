@@ -101,18 +101,16 @@
             loadQuestion();
         }
 
-        window.onload = loadQuestion;
-
         function goToMainMenu() {
             window.location.href = "index.html";
         }
+
+        window.onload = loadQuestion;
     </script>
 </head>
 <body>
     <header>
         <h1>Quiz</h1>
-        
-        <button class="main-menu-btn" id="main-menu-btn" onclick="goToMainMenu()">Till Menyn</button>
 
         <img id="quiz-image" src="" alt="Question Image" style="width: 80%; height: 32%; max-width: 500px; margin-bottom: 1em;">
 
@@ -130,7 +128,15 @@
             <button id="next-btn" style="display: none;" onclick="nextQuestion()">Nästa ▶</button>
         </div>
 
-        <button id="restart-btn" style="display: none;" onclick="restartQuiz()">Starta om quizen</button>
+        
+<div class="control-buttons">
+    <button id="restart-btn" style="display: none;" onclick="restartQuiz()">Starta om quizen</button>
+</div>
+
+<footer>
+    <button class="main-menu-btn" id="main-menu-btn" onclick="goToMainMenu()">Till Menyn</button>
+</footer>
+
     </header>
 </body>
 </html>

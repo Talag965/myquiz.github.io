@@ -104,9 +104,6 @@
 <body>
     <header>
         <h1>Quiz</h1>
-        
-        <button class="main-menu-btn" id="main-menu-btn" onclick="goToMainMenu()">Till Menyn</button>
-
         <p id="question" style="font-size: 1.6em; padding: 1.6em;"></p>
         <nav class="quiz-options">
             <button class="quiz-options__button" id="option1"></button>
@@ -114,7 +111,6 @@
             <button class="quiz-options__button" id="option3"></button>
             <button class="quiz-options__button" id="option4"></button>
         </nav>
-
         
         <div class="navigation">
             <button id="prev-btn" style="display: none;" onclick="previousQuestion()">◀ Föregående</button>
@@ -122,7 +118,10 @@
         </div>
 
         <button id="restart-btn" style="display: none;" onclick="restartQuiz()">Starta om quizen</button>
-
     </header>
+
+    <footer>
+        <button class="main-menu-btn" id="main-menu-btn" onclick="goToMainMenu()">Till Menyn</button>
+    </footer>
 </body>
 </html>

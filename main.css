@@ -100,7 +100,7 @@ li{
 }
 
 footer {
-  margin-top: 3rem;
+  margin-top: -1rem;
   font-size: 1rem;
   color: #d6dbdc;
 }
@@ -242,5 +242,13 @@ ul {
 
 #answer-container button:hover{
   background-color: purple;
+}
+
+.control-buttons {
+  display: flex;
+  flex-direction: column; /* Gör knapparna vertikala */
+  align-items: center;    /* Centrerar knappar horisontellt */
+  gap: 15px;             /* Mellanrum mellan knapparna */
+  margin-top: 20px;      /* Ger utrymme ovanför */
 }
 
