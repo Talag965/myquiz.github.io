@@ -25,6 +25,7 @@ header h1 {
   font-size: 5rem;
   color: #A081C6; /* Base purple */
   margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 header h1 .quiz_menu {
@@ -211,6 +212,7 @@ ul {
   border-radius: 5px;
   cursor: pointer;
   margin: 5px;
+  margin-top: 50px;
 }
 
 .navigation button:hover {
