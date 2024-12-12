@@ -11,8 +11,8 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #42474E;
-  color: #FDFFFC;
+  background-color: #FDFFFC;
+  color: #42474E;
   padding: 2rem;
 }
 
@@ -23,17 +23,17 @@ header {
 header h1 {
   font-family: "Roboto", sans-serif;
   font-size: 5rem;
-  color: #552583;
+  color: #A081C6; /* Base purple */
   margin-bottom: 0.5rem;
 }
 
-header h1 .quiz_menu{
+header h1 .quiz_menu {
   margin-bottom: 0em;
 }
 
 header p {
   font-size: 1.2rem;
-  color: #d6dbdc;
+  color: #6E7480;
 }
 
 .menu {
@@ -47,21 +47,19 @@ header p {
   text-decoration: none;
   font-family: "Roboto", sans-serif;
   color: #FDFFFC;
-  background-color: color;
+  background-color: #A081C6; /* Base purple */
   border-radius: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 .menu .menu__item:hover {
-  background-color: #4d2176;
+  background-color: #B99ADF; /* Lighter purple for hover */
   transform: translateY(-3px);
 }
 
-li{
+li {
   margin-top: 6em;
 }
-
-
 
 .quiz-options {
   display: grid;
@@ -82,43 +80,43 @@ li{
   font-family: "Lato", sans-serif;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
+.quiz-options .quiz-options__button#option1 {
+  background-color: #A081C6; /* Base purple */
+}
+.quiz-options .quiz-options__button#option2 {
+  background-color: #FDDF7F; /* Base gold */
+}
+.quiz-options .quiz-options__button#option3 {
+  background-color: #FDDF7F; /* Base gold */
+}
+.quiz-options .quiz-options__button#option4 {
+  background-color: #A081C6; /* Base purple */
+}
 .quiz-options .quiz-options__button:hover {
   opacity: 0.85;
   transform: translateY(-5px);
 }
-.quiz-options .quiz-options__button#option1 {
-  background-color: #552583;
-}
-.quiz-options .quiz-options__button#option2 {
-  background-color: #FDB927;
-}
-.quiz-options .quiz-options__button#option3 {
-  background-color: #FDB927;
-}
-.quiz-options .quiz-options__button#option4 {
-  background-color: #552583;
-}
 
 footer {
-  margin-top: -1rem;
+  margin-top: 3rem;
   font-size: 1rem;
-  color: #d6dbdc;
+  color: #6E7480;
 }
 footer a {
   text-decoration: none;
-  color: #552583;
+  color: #A081C6;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 footer a:hover {
-  color: #4d2176;
+  color: #B99ADF; /* Lighter purple */
 }
 
 #restart-btn {
   padding: 1rem 2rem;
   font-size: 1.2rem;
-  background-color: #8e44ad; 
-  color: #ecf0f1;
+  background-color: #A081C6; /* Base purple */
+  color: #FDFFFC;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -126,41 +124,40 @@ footer a:hover {
 }
 
 #restart-btn:hover {
-  background-color: #9b59b6; 
-  transform: scale(1.05); 
+  background-color: #B99ADF; /* Lighter purple */
+  transform: scale(1.05);
 }
 
 #restart-btn:active {
-  transform: scale(0.95); 
-  background-color: #7d3c98; 
+  transform: scale(0.95);
+  background-color: #8A6CB0; /* Slightly darker purple */
 }
 
-
-.main-menu-btn { 
-  display: block; /* Gör hela knappen klickbar, inte bara texten */
-    width: fit-content; 
-    padding: 0.8em 1.5em; 
-    margin: 1em auto; 
-    font-size: 1.2em;
-    font-family: 'Roboto', sans-serif; 
-    color: #FDFFFC; 
-    background-color: #552583; 
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease, transform 0.2s ease;
+.main-menu-btn {
+  display: block;
+  width: fit-content;
+  padding: 0.8em 1.5em;
+  margin: 1em auto;
+  font-size: 1.2em;
+  font-family: "Roboto", sans-serif;
+  color: #FDFFFC;
+  background-color: #A081C6; /* Base purple */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .main-menu-btn:hover {
-  background-color: #4d2176; 
-    transform: translateY(-2px);
+  background-color: #B99ADF; /* Lighter purple */
+  transform: translateY(-2px);
 }
 
 .main-menu-btn:active {
   transform: scale(0.95);
-  background-color: #003f7f;
+  background-color: #8A6CB0; /* Slightly darker purple */
 }
 
 ul {
@@ -180,8 +177,8 @@ ul {
 }
 
 #answer-input:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  border-color: #A081C6;
+  box-shadow: 0 0 5px rgba(160, 129, 198, 0.5);
 }
 
 #answer-input::placeholder {
@@ -190,35 +187,26 @@ ul {
 }
 
 .nav-buttons button {
-  background-color: #9e9e9e;
+  background-color: #A081C6; /* Base purple */
   margin: 0 10px;
   padding: 10px;
   border-radius: 50%;
   font-size: 1.5em;
-  color: white;
+  color: #FDFFFC;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .nav-buttons button:hover {
-  background-color: #757575;
-}
-
-/* Göm navigeringspilar på sista frågan */
-#next-btn {
-  display: none;
-}
-
-#prev-btn {
-  display: none;
+  background-color: #B99ADF; /* Lighter purple */
 }
 
 .navigation button {
   padding: 10px 20px;
   font-size: 1.2em;
-  background-color: purple;
-  color: white;
+  background-color: #A081C6; /* Base purple */
+  color: #FDFFFC;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -226,29 +214,20 @@ ul {
 }
 
 .navigation button:hover {
-  background-color: #4d2176;
+  background-color: #B99ADF; /* Lighter purple */
 }
 
-#answer-container button{
+#answer-container button {
   padding: 10px 20px;
   font-size: 1.2em;
-  background-color: gray;
-  color: white;
+  background-color: #A081C6; /* Base purple */
+  color: #FDFFFC;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
 }
 
-#answer-container button:hover{
-  background-color: purple;
+#answer-container button:hover {
+  background-color: #B99ADF; /* Lighter purple */
 }
-
-.control-buttons {
-  display: flex;
-  flex-direction: column; /* Gör knapparna vertikala */
-  align-items: center;    /* Centrerar knappar horisontellt */
-  gap: 15px;             /* Mellanrum mellan knapparna */
-  margin-top: 20px;      /* Ger utrymme ovanför */
-}
-
