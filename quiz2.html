@@ -8,22 +8,28 @@
     <script>
         const questions = [
             {
-                question: "Vilken är bästa handen i poker?",
-                options: ["AA", "KK", "AKs", "72o"],
-                correctAnswer: 3,
-                image: "pokerai.jpg" 
+                question: "Vilket av på julbordet?",
+                options: ["Risgryn", "Ströbröd", "Potatismjöl", "Ingefära"],
+                correctAnswer: 1,
+                image: "kötpullar.jpg"
             },
             {
-                question: "Hur många cigg för att dö?",
-                options: ["100", "10", "20", "40"],
+                question: "Vilken maträtt görs av torkad fisk?",
+                options: ["Lutfisk", "Gravad lax", "Sill", "Fiskpudding"],
                 correctAnswer: 0,
-                image: "cigai.jpg" 
+                image: "fisk.jpg"
             },
             {
-                question: "Vilken Anime e bäst?",
-                options: ["One Piece", "JJK", "Naruto", "AOT"],
+                question: "Vilken krydda är huvudingrediens i glögg?",
+                options: ["Kanel", "Kardemumma", "Kryddnejlika", "Stjärnanis"],
                 correctAnswer: 2,
-                image: "animeai.jpg"
+                image: "krydda.jpg"
+            },
+            {
+                question: "Vad är ett vanligt alternativ till köttbullar?",
+                options: ["kanel", "Kardemumma", "Kryddnejlika", "Stjärnanis"],
+                correctAnswer: 2,
+                image: "korv.jpg"
             }
         ];
 
@@ -112,7 +118,7 @@
     <header>
         <h1>Quiz</h1>
 
-        <img id="quiz-image" src="" alt="Question Image" style="width: 80%; height: 32%; max-width: 500px; margin-bottom: 1em;">
+        <img id="quiz-image" src="" alt="Question Image" style="width: 80%; height: 32%; max-width: 250px; max-height: 250px; margin-bottom: 1em;">
 
         <p id="question" style="font-size: 1.6em; padding: 1.6em;"></p>
         <nav class="quiz-options">
