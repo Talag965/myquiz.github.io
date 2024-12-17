@@ -1,9 +1,9 @@
 {
-"name": "Quizzen",
-"short_name": "Quiz",
+"name": "Utter Quiz",
+"short_name": "Utter Quiz",
 "start_url": "https://talag965.github.io/myquiz.github.io/",
 "display": "standalone",
-"description": "Ett quiz spel",
+"description": "Ett quiz spel gjort av utter lovers",
 "lang": "sv",
 "dir": "auto",
 "theme_color": "#000000",
