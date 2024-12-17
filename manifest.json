@@ -11,13 +11,13 @@
 "orientation": "any",
 "icons": [
     {
-        "src": "bild.png",
+        "src": "Hotpink utter.jpg",
         "sizes": "512x512",
         "type": "image/png",
         "purpose": "maskable"
     },
     {
-        "src": "bild.png",
+        "src": "Hotpink utter.jpg",
         "sizes": "192x192",
         "type": "image/png",
         "purpose": "any"
@@ -40,7 +40,7 @@
 "prefer_related_applications": false,
 "shortcuts": [
     {
-        "name":"Quizapp",
+        "name":"Utter Quiz",
         "url":"",
         "description":"A description of the functionality of this shortcut"
     }
