@@ -7,69 +7,72 @@
     <link rel="stylesheet" href="main.css">
     <script>
         const questions = [
-            {
-                question: "Vilken julfilm handlar om en grön varelse",
-                correctAnswer: "Grinch",
-            },
-            {
-                question: "Vilken julfilm handlar om en man i ett torn",
-                correctAnswer: "Diehard",
-            },
-            {
-                question: "Vilken tid går kalle och anka?",
-                correctAnswer: "15:00",
-            }
-        ];
+    {
+        question: "Vilken julfilm handlar om en grön varelse?",
+        correctAnswers: ["grinchen", "grinch"], // Array med korrekta svar
+    },
+    {
+        question: "Vilken julfilm handlar om en man i ett torn?",
+        correctAnswers: ["diehard", "die hard"], // Array med korrekta svar
+    },
+    {
+        question: "Vilken tid går kalle och anka?",
+        correctAnswers: ["15:00", "1500", "15"], // Array med korrekta svar
+    }
+];
 
-        let currentQuestionIndex = 0;
-        let score = 0;
+let currentQuestionIndex = 0;
+let score = 0;
 
-        function loadQuestion() {
-            const currentQuestion = questions[currentQuestionIndex];
-            document.getElementById('question').textContent = currentQuestion.question;
-            document.getElementById('answer-input').value = "";
-            document.getElementById('feedback').textContent = "";
-        }
+function loadQuestion() {
+    const currentQuestion = questions[currentQuestionIndex];
+    document.getElementById('question').textContent = currentQuestion.question;
+    document.getElementById('answer-input').value = "";
+    document.getElementById('feedback').textContent = "";
+}
 
-        function goToMainMenu() {
-            window.location.href = "index.html";
-        }
+function goToMainMenu() {
+    window.location.href = "index.html";
+}
 
-        function checkAnswer() {
-            const userAnswer = document.getElementById('answer-input').value.trim();
-            const currentQuestion = questions[currentQuestionIndex];
+function checkAnswer() {
+    const userAnswer = document.getElementById('answer-input').value.trim().toLowerCase();
+    const currentQuestion = questions[currentQuestionIndex];
 
-            if (userAnswer.toLowerCase() === currentQuestion.correctAnswer.toLowerCase()) {
-                score++;
-                document.getElementById('feedback').textContent = "Rätt svar!";
-            } else {
-                document.getElementById('feedback').textContent = `Fel! Rätt svar var "${currentQuestion.correctAnswer}".`;
-            }
+    // Kontrollera om svaret finns i listan med korrekta svar
+    if (currentQuestion.correctAnswers.includes(userAnswer)) {
+        score++;
+        document.getElementById('feedback').textContent = "Rätt svar!";
+    } else {
+        document.getElementById('feedback').textContent = 
+            `Fel! Rätt svar var "${currentQuestion.correctAnswers.join(', ')}".`;
+    }
 
-            currentQuestionIndex++;
-            if (currentQuestionIndex < questions.length) {
-                setTimeout(loadQuestion, 1500);
-            } else {
-                endQuiz();
-            }
-        }
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        setTimeout(loadQuestion, 1500);
+    } else {
+        endQuiz();
+    }
+}
 
-        function endQuiz() {
-            document.getElementById('question').textContent =
-                `Bra jobbat! Du fick ${score}/${questions.length} rätt.`;
-            document.getElementById('answer-container').style.display = "none";
-            document.getElementById('restart-btn').style.display = "block";
-        }
+function endQuiz() {
+    document.getElementById('question').textContent =
+        `Bra jobbat! Du fick ${score}/${questions.length} rätt.`;
+    document.getElementById('answer-container').style.display = "none";
+    document.getElementById('restart-btn').style.display = "block";
+}
 
-        function restartQuiz() {
-            currentQuestionIndex = 0;
-            score = 0;
-            document.getElementById('answer-container').style.display = "block";
-            document.getElementById('restart-btn').style.display = "none";
-            loadQuestion();
-        }
+function restartQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+    document.getElementById('answer-container').style.display = "block";
+    document.getElementById('restart-btn').style.display = "none";
+    loadQuestion();
+}
 
-        window.onload = loadQuestion;
+window.onload = loadQuestion;
+
     </script>
 </head>
 <body>

@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: Lato;
   src: url(Lato-Regular.ttf);
@@ -34,7 +33,7 @@ header {
 header h1 {
   font-family: "Roboto", sans-serif;
   font-size: 5rem;
-  color: #A081C6; /* Base purple */
+  color: #A081C6; 
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
 }
@@ -59,13 +58,13 @@ header p {
   text-decoration: none;
   font-family: "Roboto", sans-serif;
   color: #FDFFFC;
-  background-color: #A081C6; /* Base purple */
+  background-color: #A081C6; 
   border-radius: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 .menu .menu__item:hover {
-  background-color: #B99ADF; /* Lighter purple for hover */
+  background-color: #B99ADF; 
   transform: translateY(-3px);
 }
 
@@ -93,16 +92,16 @@ li {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
 .quiz-options .quiz-options__button#option1 {
-  background-color: #A081C6; /* Base purple */
+  background-color: #A081C6; 
 }
 .quiz-options .quiz-options__button#option2 {
-  background-color: #FDDF7F; /* Base gold */
+  background-color: #E1C45C; 
 }
 .quiz-options .quiz-options__button#option3 {
-  background-color: #FDDF7F; /* Base gold */
+  background-color: #E1C45C; 
 }
 .quiz-options .quiz-options__button#option4 {
-  background-color: #A081C6; /* Base purple */
+  background-color: #A081C6;
 }
 .quiz-options .quiz-options__button:hover {
   opacity: 0.85;
@@ -121,13 +120,13 @@ footer a {
   transition: color 0.3s ease;
 }
 footer a:hover {
-  color: #B99ADF; /* Lighter purple */
+  color: #B99ADF; 
 }
 
 #restart-btn {
   padding: 1rem 2rem;
   font-size: 1.2rem;
-  background-color: #A081C6; /* Base purple */
+  background-color: #A081C6; 
   color: #FDFFFC;
   border: none;
   border-radius: 8px;
@@ -136,13 +135,13 @@ footer a:hover {
 }
 
 #restart-btn:hover {
-  background-color: #B99ADF; /* Lighter purple */
+  background-color: #B99ADF; 
   transform: scale(1.05);
 }
 
 #restart-btn:active {
   transform: scale(0.95);
-  background-color: #8A6CB0; /* Slightly darker purple */
+  background-color: #8A6CB0; 
 }
 
 .main-menu-btn {
@@ -153,7 +152,7 @@ footer a:hover {
   font-size: 1.2em;
   font-family: "Roboto", sans-serif;
   color: #FDFFFC;
-  background-color: #A081C6; /* Base purple */
+  background-color: #A081C6;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -163,13 +162,13 @@ footer a:hover {
 }
 
 .main-menu-btn:hover {
-  background-color: #B99ADF; /* Lighter purple */
+  background-color: #B99ADF;
   transform: translateY(-2px);
 }
 
 .main-menu-btn:active {
   transform: scale(0.95);
-  background-color: #8A6CB0; /* Slightly darker purple */
+  background-color: #8A6CB0; 
 }
 
 ul {
@@ -199,7 +198,7 @@ ul {
 }
 
 .nav-buttons button {
-  background-color: #A081C6; /* Base purple */
+  background-color: #A081C6; 
   margin: 0 10px;
   padding: 10px;
   border-radius: 50%;
@@ -211,13 +210,13 @@ ul {
 }
 
 .nav-buttons button:hover {
-  background-color: #B99ADF; /* Lighter purple */
+  background-color: #B99ADF; 
 }
 
 .navigation button {
   padding: 10px 20px;
   font-size: 1.2em;
-  background-color: #A081C6; /* Base purple */
+  background-color: #A081C6; 
   color: #FDFFFC;
   border: none;
   border-radius: 5px;
@@ -227,13 +226,13 @@ ul {
 }
 
 .navigation button:hover {
-  background-color: #B99ADF; /* Lighter purple */
+  background-color: #B99ADF; 
 }
 
 #answer-container button {
   padding: 10px 20px;
   font-size: 1.2em;
-  background-color: #A081C6; /* Base purple */
+  background-color: #A081C6; 
   color: #FDFFFC;
   border: none;
   border-radius: 5px;
@@ -242,5 +241,5 @@ ul {
 }
 
 #answer-container button:hover {
-  background-color: #B99ADF; /* Lighter purple */
+  background-color: #B99ADF; 
 }

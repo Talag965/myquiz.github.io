@@ -79,10 +79,10 @@ header p {
   background-color: #552583;
 }
 .quiz-options .quiz-options__button#option2 {
-  background-color: #FDB927;
+  background-color: #E0A818; /* Mörkare guld */
 }
 .quiz-options .quiz-options__button#option3 {
-  background-color: #FDB927;
+  background-color: #E0A818; /* Mörkare guld */
 }
 .quiz-options .quiz-options__button#option4 {
   background-color: #552583;
