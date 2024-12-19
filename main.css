@@ -245,7 +245,7 @@ ul {
 }
 
 /* Anpassningar för landskapsläge på mobiler */
-@media screen and (orientation: landscape) {
+@media screen and (orientation: landscape) and (max-width: 768px) {
   body {
     flex-direction: row; /* Horisontell layout */
     justify-content: space-around;

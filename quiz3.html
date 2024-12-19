@@ -9,15 +9,15 @@
         const questions = [
     {
         question: "Vilken julfilm handlar om en grön varelse?",
-        correctAnswers: ["grinchen", "grinch"], // Array med korrekta svar
+        correctAnswers: ["grinchen", "grinch"], 
     },
     {
         question: "Vilken julfilm handlar om en man i ett torn?",
-        correctAnswers: ["diehard", "die hard"], // Array med korrekta svar
+        correctAnswers: ["diehard", "die hard"], 
     },
     {
         question: "Vilken tid går kalle och anka?",
-        correctAnswers: ["15:00", "1500", "15"], // Array med korrekta svar
+        correctAnswers: ["15:00", "1500", "15"], 
     }
 ];
 
@@ -39,7 +39,7 @@ function checkAnswer() {
     const userAnswer = document.getElementById('answer-input').value.trim().toLowerCase();
     const currentQuestion = questions[currentQuestionIndex];
 
-    // Kontrollera om svaret finns i listan med korrekta svar
+    
     if (currentQuestion.correctAnswers.includes(userAnswer)) {
         score++;
         document.getElementById('feedback').textContent = "Rätt svar!";
