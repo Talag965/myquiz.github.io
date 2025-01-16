@@ -120,7 +120,39 @@
             <button class="quiz-options__button" id="option3"></button>
             <button class="quiz-options__button" id="option4"></button>
         </nav>
-        
+
+
+        <div id="timer">15</div>
+        <script>
+        var audio = new Audio('audio_file.mp3');
+        let countdown = 15; 
+        const timerElement = document.getElementById("timer");
+
+        function startCountdown() {
+        const interval = setInterval(() => {
+        countdown--; 
+        timerElement.textContent = countdown; 
+
+        if (countdown < 4) {
+            timerElement.style.color = 'red';
+        } else{
+            timerElement.style.color = 'black';
+        }
+
+        if (countdown <= 0) {
+          countdown = 15; 
+          nextQuestion()
+        }
+        }, 1000); 
+        }
+
+        startCountdown();
+
+
+
+        </script>
+
+
         <div class="navigation">
             <button id="prev-btn" style="display: none;" onclick="previousQuestion()">◀ Föregående</button>
             <button id="next-btn" style="display: none;" onclick="nextQuestion()">Nästa ▶</button>
