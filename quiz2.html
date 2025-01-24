@@ -127,42 +127,42 @@
             <button class="quiz-options__button" id="option4"></button>
         </nav>
 
-        <script>
-            var audio = new Audio('audio_file.mp3'); // Replace 'audio_file.mp3' with your actual audio file path
-            let countdown = 5; 
-            const timerElement = document.getElementById("timer");
+        <div id="timer">5</div>
+<script>
+var audio = new Audio('audio_file.mp3');
+let countdown = 5; 
+const timerElement = document.getElementById("timer");
 
-            function startCountdown() {
-                const interval = setInterval(() => {
-                    countdown--; 
-                    timerElement.textContent = countdown; 
+function startCountdown() {
+    const interval = setInterval(() => {
+        countdown--; 
+        timerElement.textContent = countdown; 
 
-                    // Change timer color and play audio when below 4
-                    if (countdown < 4) {
-                        timerElement.style.color = 'red';
-                        audio.play();
-                    } else {
-                        timerElement.style.color = 'black';
-                    }
-
-                    // Vibrate and reset when countdown reaches zero
-                    if (countdown <= 1) {
-                        if ("vibrate" in navigator) {
-                            navigator.vibrate(200); // Vibrate for 200ms
-                        }
-                        countdown = 5; // Reset the countdown
-                        nextQuestion(); // Call your nextQuestion function
-                    }
-                }, 1000); 
+        if (countdown < 4) {
+            timerElement.style.color = 'red';
+            audio.play();
+            
+            // Trigger vibration
+            if (navigator.vibrate) {
+                navigator.vibrate(200); // Vibrate for 200ms
             }
+        } else {
+            timerElement.style.color = 'black';
+        }
 
-            function nextQuestion() {
-                // Your logic to move to the next question goes here
-                console.log("Moving to the next question...");
+        if (countdown <= 0) {
+            countdown = 5; 
+            // Call the main quiz logic's nextQuestion function
+            if (typeof window.nextQuestion === "function") {
+                window.nextQuestion();
             }
+        }
+    }, 1000); 
+}
 
-            startCountdown();
-        </script>
+startCountdown();
+</script>
+
 
 
         
