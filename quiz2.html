@@ -127,6 +127,44 @@
             <button class="quiz-options__button" id="option4"></button>
         </nav>
 
+        <div id="timer">5</div>
+        <script>
+        
+        var audio = new Audio('audio_file.mp3');
+        let countdown = 5; 
+        const timerElement = document.getElementById("timer");
+
+        function startCountdown() {
+        const interval = setInterval(() => {
+        countdown--; 
+        timerElement.textContent = countdown; 
+
+        if (countdown < 4) {
+            timerElement.style.color = 'red';
+            audio.play();
+        } else {
+            timerElement.style.color = 'black';
+        }
+
+        if (countdown <= 0) {
+            // Vibrate the phone for 200ms
+            if ("vibrate" in navigator) {
+                navigator.vibrate(200); // Single vibration for 200ms
+            }
+
+            countdown = 5; 
+            nextQuestion(); // Move to the next question
+        }
+     }, 1000); 
+}
+
+startCountdown();
+
+
+        </script>
+
+        
+
         <!-- Navigeringsknappar -->
         <div class="navigation">
             <button id="prev-btn" style="display: none;" onclick="previousQuestion()">◀ Föregående</button>
