@@ -127,41 +127,43 @@
             <button class="quiz-options__button" id="option4"></button>
         </nav>
 
-        <div id="timer">5</div>
         <script>
-        
-        var audio = new Audio('audio_file.mp3');
-        let countdown = 5; 
-        const timerElement = document.getElementById("timer");
+            var audio = new Audio('audio_file.mp3'); // Replace 'audio_file.mp3' with your actual audio file path
+            let countdown = 5; 
+            const timerElement = document.getElementById("timer");
 
-        function startCountdown() {
-        const interval = setInterval(() => {
-        countdown--; 
-        timerElement.textContent = countdown; 
+            function startCountdown() {
+                const interval = setInterval(() => {
+                    countdown--; 
+                    timerElement.textContent = countdown; 
 
-        if (countdown < 4) {
-            timerElement.style.color = 'red';
-            audio.play();
-        } else {
-            timerElement.style.color = 'black';
-        }
+                    // Change timer color and play audio when below 4
+                    if (countdown < 4) {
+                        timerElement.style.color = 'red';
+                        audio.play();
+                    } else {
+                        timerElement.style.color = 'black';
+                    }
 
-        if (countdown <= 1) {
-            // Vibrate the phone for 200ms
-            if ("vibrate" in navigator) {
-                navigator.vibrate(200); // Single vibration for 200ms
+                    // Vibrate and reset when countdown reaches zero
+                    if (countdown <= 0) {
+                        if ("vibrate" in navigator) {
+                            navigator.vibrate(200); // Vibrate for 200ms
+                        }
+                        countdown = 5; // Reset the countdown
+                        nextQuestion(); // Call your nextQuestion function
+                    }
+                }, 1000); 
             }
 
-            countdown = 5; 
-            nextQuestion(); // Move to the next question
-        }
-     }, 1000); 
-}
+            function nextQuestion() {
+                // Your logic to move to the next question goes here
+                console.log("Moving to the next question...");
+            }
 
-startCountdown();
-
-
+            startCountdown();
         </script>
+
 
         
 
