@@ -15,43 +15,17 @@
         <nav class="menu">
             <ul class="menu_list">
                 <li> 
-                    <a href="quiz1.html" class="menu__item quiz-link">Quiz 1</a>
+                    <a href="quiz1.html" class="menu__item">Quiz 1</a>
                 </li>
                 <li> 
-                    <a href="quiz2.html" class="menu__item quiz-link">Quiz 2</a> 
+                    <a href="quiz2.html" class="menu__item">Quiz 2</a> 
                 </li>
                 <li> 
-                    <a href="quiz3.html" class="menu__item quiz-link">Quiz 3</a> 
+                    <a href="quiz3.html" class="menu__item">Quiz 3</a> 
                 </li>
             </ul>    
+    
         </nav>
     </header>
-
-    <script>
-        // Hämta alla quiz-knappar
-        const quizLinks = document.querySelectorAll('.quiz-link');
-        const audio = new Audio('path/to/sound.mp3'); // Ljudfilens sökväg
-
-        // Lägg till klickhändelse för varje knapp
-        quizLinks.forEach(link => {
-            link.addEventListener('click', (event) => {
-                // Trigger vibration innan navigation
-                if (navigator.vibrate) {
-                    navigator.vibrate(200); // Vibrera i 200ms
-                }
-
-                // Spela ljud
-                audio.play();
-
-                // Eventuell fördröjning för vibration/ljud (valfritt)
-                setTimeout(() => {
-                    window.location.href = link.href; // Navigera till quiz-sidan
-                }, 200); // Vänta 200ms innan navigation (valfritt)
-
-                // Stoppa direkt navigation (endast om du vill hantera fördröjning)
-                event.preventDefault();
-            });
-        });
-    </script>
 </body>
 </html>
