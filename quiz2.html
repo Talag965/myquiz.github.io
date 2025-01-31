@@ -151,13 +151,18 @@ function triggerFeedback() {
 
 function startCountdown() {
     const interval = setInterval(() => {
-        countdown--; 
-        timerElement.textContent = countdown; 
+        countdown--;
+        timerElement.textContent = countdown;
 
-        if (countdown < 4) {
+        if (countdown < 3) { // Ändrat från < 4 till < 3
             timerElement.style.color = 'red';
             audio.play();
             triggerFeedback(); // Använd funktionen här istället för navigator.vibrate()
+            
+            // Trigger vibration
+            if (navigator.vibrate && countdown === 2) { // Vibrera endast vid 2 sekunder
+                navigator.vibrate(200); // Vibrera i 200ms
+            }
         } else {
             timerElement.style.color = 'black';
         }
@@ -168,9 +173,9 @@ function startCountdown() {
                 window.nextQuestion();
             }
         }
-    }, 1000); 
+    }, 1000);
+    
 }
-
 startCountdown();
 
 </script>
@@ -179,7 +184,6 @@ startCountdown();
 
         
 
-        <!-- Navigeringsknappar -->
         <div class="navigation">
             <button id="prev-btn" style="display: none;" onclick="previousQuestion()">◀ Föregående</button>
             <button id="next-btn" style="display: none;" onclick="nextQuestion()">Nästa ▶</button>
