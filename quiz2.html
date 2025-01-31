@@ -128,10 +128,26 @@
         </nav>
 
         <div id="timer">5</div>
+
 <script>
+    
 var audio = new Audio('audio_file.mp3');
 let countdown = 5; 
 const timerElement = document.getElementById("timer");
+
+function triggerFeedback() {
+    if (window.navigator.vibrate) {
+        // För Android
+        window.navigator.vibrate(200);
+    } else if (window.navigator && window.navigator.hapticFeedback) {
+        // För iOS (PWA)
+        window.navigator.hapticFeedback.impactOccurred('medium');
+    } else {
+        // Alternativ feedback för iOS (t.ex. spela ett kort ljud)
+        var beep = new Audio('buzz-sound.mp3'); 
+        beep.play();
+    }
+}
 
 function startCountdown() {
     const interval = setInterval(() => {
@@ -141,18 +157,13 @@ function startCountdown() {
         if (countdown < 4) {
             timerElement.style.color = 'red';
             audio.play();
-            
-            // Trigger vibration
-            if (navigator.vibrate) {
-                navigator.vibrate(200); // Vibrate for 200ms
-            }
+            triggerFeedback(); // Använd funktionen här istället för navigator.vibrate()
         } else {
             timerElement.style.color = 'black';
         }
 
         if (countdown <= 0) {
             countdown = 5; 
-            // Call the main quiz logic's nextQuestion function
             if (typeof window.nextQuestion === "function") {
                 window.nextQuestion();
             }
@@ -161,6 +172,7 @@ function startCountdown() {
 }
 
 startCountdown();
+
 </script>
 
 
