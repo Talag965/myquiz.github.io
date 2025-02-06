@@ -131,3 +131,4 @@
 
  // Ladda quiz när sidan laddas
  window.onload = loadQuiz;
+
