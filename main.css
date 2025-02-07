@@ -264,13 +264,23 @@ ul {
   }
 
   .menu {
+    width: 100%; /* Ger alla knappar samma bredd */
+    max-width: 300px; /* Sätt en maxbredd för att undvika för stora knappar */
+    display: block; /* Gör att de beter sig som blockelement */
+    text-align: center; /* Centrera texten */
     flex-direction: row; 
     gap: 1rem;
   }
 
   .menu .menu__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
     padding: 1.5rem 3rem; 
     font-size: 2.5rem; 
+    width: 100%; /* Ger alla knappar samma bredd */
+    max-width: 300px; /* Sätt en maxbredd för att undvika för stora knappar */
   }
 
   .quiz-options {
