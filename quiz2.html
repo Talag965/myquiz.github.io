@@ -137,7 +137,7 @@
 
 <script>
     
-var audio = new Audio('audio_file.mp3');
+var audio = new Audio('ding.mp3');
 let countdown = 10; 
 const timerElement = document.getElementById("timer");
 
@@ -147,7 +147,7 @@ function triggerFeedback() {
     } else if (window.navigator && window.navigator.hapticFeedback) {
         window.navigator.hapticFeedback.impactOccurred('medium');
     } else {
-        var beep = new Audio('buzz-sound.mp3'); 
+        var beep = new Audio('ding.mp3'); 
         beep.play();
     }
 }
