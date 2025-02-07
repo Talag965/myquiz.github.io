@@ -7,43 +7,8 @@
     <link rel="stylesheet" href="main.css">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.0.0/dist/umd/supabase.min.js"></script>
 </head>
-<script>
-
-let countdown = 5; 
-const timerElement = document.getElementById("timer");
-let interval;
-console.log(timerElement);  // Lägg till detta för att kontrollera om elementet hittades
 
 
-function startCountdown() {
-    interval = setInterval(() => {
-        countdown--; 
-        timerElement.textContent = countdown;
-
-        if (countdown < 4) {
-            timerElement.style.color = 'red';
-            audio.play();
-            triggerFeedback();
-        } else {
-            timerElement.style.color = 'black';
-        }
-
-        if (countdown <= 0) {
-            clearInterval(interval);  // Stoppa intervallet
-            countdown = 5; 
-            if (typeof window.nextQuestion === "function") {
-                window.nextQuestion();
-            }
-            // Starta om timern om du vill
-            setTimeout(startCountdown, 1000);  // Eller använd en annan metod för att starta om den
-        }
-    }, 1000);
-}
-
-startCountdown();
-
-
-</script>
 <body>
     <header>
         <p id="question" style="font-size: 1.6em; padding: 1.6em;"></p>
@@ -54,8 +19,6 @@ startCountdown();
             <button class="quiz-options__button" id="option3"></button>
             <button class="quiz-options__button" id="option4"></button>
         </nav>
-
-        <div id="timer">5</div>
 
         <div class="navigation">
             <button id="prev-btn" style="display: none;" onclick="previousQuestion()">◀ Föregående</button>

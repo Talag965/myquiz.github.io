@@ -55,7 +55,7 @@ async function loadQuestion() {
 
     document.getElementById('restart-btn').style.display = "none";
     document.getElementById('prev-btn').style.display = currentQuestionIndex > 0 ? 'inline-block' : 'none';
-    document.getElementById('next-btn').style.display = currentQuestionIndex < questions.length - 1 ? 'inline-block' : 'none';
+    document.getElementById('next-btn').style.display = currentQuestionIndex < questions.length - 1? 'inline-block' : 'none';
 }
 
 // Kontrollera svar
