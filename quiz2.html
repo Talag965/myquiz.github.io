@@ -74,6 +74,7 @@
         function nextQuestion() {
             if (currentQuestionIndex < questions.length - 1) {
                 currentQuestionIndex++;
+                countdown = 10;
                 loadQuestion();
             } else {
                 endQuiz();
@@ -83,6 +84,8 @@
         function previousQuestion() {
             if (currentQuestionIndex > 0) {
                 currentQuestionIndex--;
+                countdown = 10;
+
                 loadQuestion();
             }
         }
@@ -90,6 +93,8 @@
         function endQuiz() {
             document.getElementById('question').textContent =
                 "Bra jobbat! Du fick " + score + "/" + questions.length;
+                timerElement.textContent = 0; 
+
 
             for (let i = 1; i <= 4; i++) {
                 document.getElementById('option' + i).style.display = "none";
@@ -104,6 +109,7 @@
         function restartQuiz() {
             currentQuestionIndex = 0;
             score = 0;
+            countdown = 10;
             loadQuestion();
         }
 
@@ -127,23 +133,20 @@
             <button class="quiz-options__button" id="option4"></button>
         </nav>
 
-        <div id="timer">5</div>
+        <div id="timer">10</div>
 
 <script>
     
 var audio = new Audio('audio_file.mp3');
-let countdown = 5; 
+let countdown = 10; 
 const timerElement = document.getElementById("timer");
 
 function triggerFeedback() {
     if (window.navigator.vibrate) {
-        // För Android
         window.navigator.vibrate(200);
     } else if (window.navigator && window.navigator.hapticFeedback) {
-        // För iOS (PWA)
         window.navigator.hapticFeedback.impactOccurred('medium');
     } else {
-        // Alternativ feedback för iOS (t.ex. spela ett kort ljud)
         var beep = new Audio('buzz-sound.mp3'); 
         beep.play();
     }
@@ -157,13 +160,13 @@ function startCountdown() {
         if (countdown < 4) {
             timerElement.style.color = 'red';
             audio.play();
-            triggerFeedback(); // Använd funktionen här istället för navigator.vibrate()
+            triggerFeedback(); 
         } else {
             timerElement.style.color = 'black';
         }
 
         if (countdown <= 0) {
-            countdown = 5; 
+            countdown = 10; 
             if (typeof window.nextQuestion === "function") {
                 window.nextQuestion();
             }
